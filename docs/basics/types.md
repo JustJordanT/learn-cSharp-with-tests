@@ -86,7 +86,7 @@ dotnet sln InnovateX.sln add InnovateX.Test.Types --solution-folder InnovateX.Te
 We can see that we have all of our files in order.
 ![img_7.png](img_7.png)
 
-### Calculate Function
+## Calculate Function
 
 Now let's create our first test. 
 
@@ -111,15 +111,22 @@ If we take a look at this test, we can see that we are adding two numbers togeth
 [CS0103] The name 'TypesVariables' does not exist in the current context
   ```
 
-This is because we have not created this code as of yet! let's create this Calculate function.
+This is because we have not created this code as of yet! 
+
+
+### Addition
+let's create this Calculate function.
 
 ```bash
 #Create the new library containing our code
 dotnet new classlib -o InnovateX.TypesVariables
 
-#Let's add thjis to a folder as well
+#Let's add this to a folder as well
 dotnet sln InnovateX.sln add InnovateX.TypesVariables --solution-folder InnovateX.Libraries
 ```
+
+Let's also clean this up and rename the default file name it give us to `Calculate.cs`
+
 Now let's create a function to calculate the values.
  > Don't worry if you do not know what or how functions work, we will dive into these at a later time in detail. For now you can just follow along.
 
@@ -135,7 +142,7 @@ public class Calculate
 
 ```
 
-One more thing we can see if that we are getting an error on our test code.
+Moving back over to our test, One more thing we can see if that we are getting an error.
 
 ![img_8.png](img_8.png)
 ![img_9.png](img_9.png)
@@ -156,11 +163,88 @@ Running all tests.
 
 ![img_13.png](img_13.png)
 
-Huzzah! 🎉 We have passed all tests.
+Huzzah! 🎉 We have passed all tests. Let's keep going!
 
+### Subtraction
 
-I hope this gives you a good introduction to `C#` data types.
+Now we have created the Subtraction function.
 
+```csharp
+[Fact]
+    public void SubtractionTest()
+    {
+        // arrange
+        var sub = Calculate.Subtraction(2, 4);
 
+        // act
+        var sum = 2;
+
+        // assert
+        Assert.Equal(sum, sub);
+
+    }
+```
+
+When running our test we see that we are getting an error
+```angular2html
+[CS0117] 'Calculate' does not contain a definition for 'Subtraction'
+```
+
+This is happening because we have not created our `Subtraction` function in our `Calculate.cs`` file, let us add that now.
+
+```csharp
+public static int Subtraction(int num1, int num2)
+{
+    return num1 - num2;
+}
+```
+
+Now we can rerun our tests.
+```bash
+# Running this command we can also run our tests.
+dotnet test
+Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 5 ms - InnovateX.Test.Types.dll (net7.0)
+```
+Nice we are passing our test now. Let do it again for Division.
+
+### Division
+
+As we are use to by now, we are going to create our test, which at this point will fail.
+
+```csharp
+[Fact]
+    public void DivisionTest()
+    {
+        // arrange
+        var sub = Calculate.Division(10,2);
+
+        // act
+        var sum = 5;
+
+        // assert
+        Assert.Equal(sum, sub);
+
+    }
+```
+
+With our falling test lets add the code so we are able to get this to pass.
+
+```csharp
+public static int Division(int num1, int num2)
+{
+    return num1 / num2;
+}
+```
+
+And there you have it! passing tests all around.
+
+```bash
+# Run test using the dotnet cli
+dotnet test
+
+#output
+Passed!  - Failed:     0, Passed:     3, Skipped:     0, Total:     3, Duration: 6 ms - InnovateX.Test.Types.dll (net7.0)
+```
+I hope this gives you a good introduction to `C#` data types. Next we will look at Expressions and operators.
 
 

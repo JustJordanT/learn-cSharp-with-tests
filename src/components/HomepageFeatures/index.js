@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Red',
+    Svg: require('@site/static/img/undraw_scientist_re_n5d5.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+          Start by writing a test that defines the expected behavior of the code you want to write.
+          This test should fail because the code does not yet exist. Run the test: Run the test to confirm that it fails as expected.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Green',
+    Svg: require('@site/static/img/undraw_check_boxes_re_v40f.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+          Write the minimum amount of code needed to make the test pass. Run all the tests, including the one you just wrote,
+          to ensure that the code you wrote works as intended and does not break any existing functionality.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Refactor',
+    Svg: require('@site/static/img/undraw_programming_re_kg9v.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+          If necessary, clean up and optimize the code you just wrote without changing its functionality.
+          Continue the cycle by writing more tests and writing the code to make them pass.
       </>
     ),
   },

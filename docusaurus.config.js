@@ -57,21 +57,25 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Learning with tests',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/android-chrome-192x192.png',
         },
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'C# Fundamentals'
           },
+          {type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'ASP.NET Fundamentals'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/JustJordanT/learn-cSharp-with-tests',
             label: 'GitHub',
             position: 'right',
           },
@@ -84,7 +88,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'C# Fundamentals',
                 to: '/docs/intro',
               },
             ],
